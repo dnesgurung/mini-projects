@@ -63,6 +63,7 @@ function startQuiz() {
   console.log("quiz started");
   // reset vars
   currentQuestionIndex = 0;
+  score = 0;
   scoreSpan.textContent = 0;
 
   startScreen.classList.remove("active");
@@ -70,6 +71,8 @@ function startQuiz() {
 
   showQuestion();
 }
+ 
+
 
 function showQuestion() {
   // reset state
@@ -77,7 +80,7 @@ function showQuestion() {
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
-  // currentQuestionSpan.textContent = currentQuestionIndex + 1;
+  currentQuestionSpan.textContent = currentQuestionIndex + 1;
 
   const progressPercent = (currentQuestionIndex / quizQuestions.length) * 100;
   progressBar.style.width = progressPercent + "%";
